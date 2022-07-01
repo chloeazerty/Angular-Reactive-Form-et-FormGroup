@@ -1,0 +1,50 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label>
+            Username:
+            <input type="text" formControlName="username">
+        </label>
+    </div>
+
+    <div formGroupName="address">
+            <div>
+                <label>
+                    Street:
+                    <input type="text" formControlName="street">
+                </label>
+            </div>
+    
+            <div>
+                <label>
+                    City:
+                    <input type="text" formControlName="city">
+                </label>
+            </div>
+    
+            <div>
+                <label>
+                    Zip code:
+                    <input type="text" formControlName="zipCode">
+                </label> 
+            </div>
+        </div>
+
+        <div formGroupName="credentials">
+            <div>
+                <label>
+                    Email
+                    <input type="mail" formControlName="email">
+                </label> 
+            </div>
+
+            <div>
+                <label>
+                   Password
+                    <input type="password" formControlName="password">
+                </label> 
+            </div>
+
+        </div>
+
+    <button type="submit" [disabled]="!userForm.valid">Submit</button>
+</form>
